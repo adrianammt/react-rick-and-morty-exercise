@@ -1,3 +1,4 @@
+*,
 ::before,
 ::after {
   box-sizing: border-box;
@@ -8,21 +9,21 @@
 .App {
   height: 100vh;
   display: grid;
-  grid-template-rows: 10vh auto 1vh;
-  place-items: center;
+  grid-template-rows: 10vh auto 10vh;
   color: #04b1c5;
-  background-color: #111440;
-  font-size: 1.6em;
+  background-color: hsl(236, 58%, 16%);
+  font-size: 16px;
 }
 
 .App-Header {
   border-bottom: 1px solid white;
-  width: 100%;
+  display: flex;
 }
 
 .App-Header__Nav {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   width: 100%;
 }
 .App-Header--Logo {
@@ -38,18 +39,61 @@
 
 .App-Content {
   padding: 1em;
-  /* display: flex;
-  flex-direction: row;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   overflow-y: scroll;
-  scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 .Home-Img {
-  height: 300px;
-  width: auto;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .Character-Card {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.Character-card--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid aquamarine;
+  padding: 1rem;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #ffffff1b;
+}
+
+.Character-Card__image {
+  border-radius: 10px;
+  height: 200px;
+}
+.Character-Card__description li {
+  list-style: none;
+}
+
+.Footer {
+  border-top: 1px solid white;
+  width: 100%;
+}
+
+.CharacterList__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.CharacterList__wrapper a {
+  text-decoration: none;
+  color: white;
 }

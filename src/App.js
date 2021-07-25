@@ -22,6 +22,10 @@ function App() {
           </Route>
         </Switch>
       </main>
+      <footer className="Footer">
+        <input />
+        <button>click me</button>
+      </footer>
     </div>
   );
 }
