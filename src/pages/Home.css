@@ -1,0 +1,17 @@
+.Home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  align-items: center;
+  text-align: center;
+}
+
+.Home-content a {
+  text-decoration: none;
+  color: #04b1c5;
+}
+
+.Home-Img {
+  height: 200px;
+  border-radius: 50%;
+}
