@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 export default function SingleCharacterPage() {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
+  let history = useHistory();
+  // const [nextId, setNextId] = useState({ id });
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/character/${id}`;
@@ -17,7 +19,7 @@ export default function SingleCharacterPage() {
   function renderCharacter() {
     let type = character?.type;
     if (type === "") {
-      type = "not given";
+      type = "---";
     }
     return (
       <>
@@ -38,7 +40,19 @@ export default function SingleCharacterPage() {
     );
   }
 
+  function handleClickNext() {
+    history.push(`/character/${Number(id) + 1}`);
+  }
+
+  function handleClickBack() {
+    history.push(`/character/${Number(id) - 1}`);
+  }
+
   return (
-    <section className="Character-card--wrapper">{renderCharacter()}</section>
+    <>
+      <p onClick={handleClickBack}>⬅️ Back</p>
+      <p onClick={handleClickNext}>Next ➡️</p>
+      <section className="Character-card--wrapper">{renderCharacter()}</section>
+    </>
   );
 }

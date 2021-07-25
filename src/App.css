@@ -69,8 +69,8 @@
   border: 1px solid aquamarine;
   padding: 1rem;
   border-radius: 15px;
-  text-align: center;
   background-color: #ffffff1b;
+  width: 250px;
 }
 
 .Character-Card__image {
