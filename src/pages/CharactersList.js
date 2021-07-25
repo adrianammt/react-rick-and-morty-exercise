@@ -20,7 +20,7 @@ export default function CharactersList() {
       const id = character.id;
 
       return (
-        <section key={id} className="Character-card--wrapper">
+        <section key={id} className="Character-card">
           <Link to={`/character/${id}`}>
             <p>{character.name}</p>
           </Link>
@@ -56,13 +56,15 @@ export default function CharactersList() {
 
   return (
     <>
-      <div>
+      <div className="CharacterList__pageChange">
         <button onClick={handleClickBack}>Previous</button>
+        <p>Page {pageCount} of 34 pages</p>
         <button onClick={handleClickNext}>Next</button>
       </div>
       <div className="CharacterList__wrapper">{renderCharacters()}</div>
-      <div>
+      <div className="CharacterList__pageChange">
         <p onClick={handleClickBack}>⬅️</p>
+        <p>Page {pageCount} of 34 pages</p>
         <p onClick={handleClickNext}>➡️</p>
       </div>
     </>

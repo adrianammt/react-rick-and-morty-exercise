@@ -1,9 +1,9 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import CharactersList from "./pages/CharactersList";
 import SingleCharacterPage from "./pages/SingleCharacterPage";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (

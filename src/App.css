@@ -59,7 +59,7 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
-.Character-card--wrapper {
+.Character-card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -70,7 +70,12 @@
   padding: 1rem;
   border-radius: 15px;
   background-color: #ffffff1b;
-  width: 250px;
+  max-width: 300px;
+}
+
+.Character-card__wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .Character-Card__image {
@@ -97,4 +102,9 @@
 .CharacterList__wrapper a {
   text-decoration: none;
   color: white;
+}
+
+.CharacterList__pageChange {
+  display: flex;
+  flex-direction: row;
 }

@@ -49,10 +49,13 @@ export default function SingleCharacterPage() {
   }
 
   return (
-    <>
-      <p onClick={handleClickBack}>⬅️ Back</p>
-      <p onClick={handleClickNext}>Next ➡️</p>
-      <section className="Character-card--wrapper">{renderCharacter()}</section>
-    </>
+    <section className="Character-card__wrapper">
+      <div className="Character-card__wrapper">
+        <p onClick={handleClickBack}>⬅️ Back -</p>
+        <p onClick={handleClickNext}>- Next ➡️</p>
+      </div>
+      <div className="Character-card">{renderCharacter()}</div>
+      <p>Character {id} of 671 characters.</p>
+    </section>
   );
 }
