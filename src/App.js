@@ -23,8 +23,7 @@ function App() {
         </Switch>
       </main>
       <footer className="Footer">
-        <input />
-        <button>click me</button>
+        <p>Which are your favorite characters?</p>
       </footer>
     </div>
   );

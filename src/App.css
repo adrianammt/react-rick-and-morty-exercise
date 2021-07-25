@@ -48,11 +48,6 @@
   scroll-behavior: smooth;
 }
 
-.Home-Img {
-  height: 200px;
-  border-radius: 50%;
-}
-
 .Character-Card {
   list-style: none;
   display: flex;
@@ -95,6 +90,9 @@
 .Footer {
   border-top: 1px solid white;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .CharacterList__wrapper {
