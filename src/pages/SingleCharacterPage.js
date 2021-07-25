@@ -50,7 +50,7 @@ export default function SingleCharacterPage() {
 
   return (
     <section className="Character-card__wrapper">
-      <div className="Character-card__wrapper">
+      <div className="CharacterList__pageChange">
         <p onClick={handleClickBack}>⬅️ Back -</p>
         <p onClick={handleClickNext}>- Next ➡️</p>
       </div>
