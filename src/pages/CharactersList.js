@@ -19,11 +19,11 @@ export default function CharactersList() {
 
   function renderCharacters() {
     const filterByStatus = characters.filter((character) => {
-      if (statusFilter === "alive") {
+      if (statusFilter === "Alive") {
         return character.status === "Alive";
-      } else if (statusFilter === "dead") {
+      } else if (statusFilter === "Dead") {
         return character.status === "Dead";
-      } else if (statusFilter === "unknown") {
+      } else if (statusFilter === "Unknown") {
         return character.status === "unknown";
       } else {
         return character;
