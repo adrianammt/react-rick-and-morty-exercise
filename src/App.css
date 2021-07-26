@@ -48,29 +48,35 @@
   scroll-behavior: smooth;
 }
 
-.Home-Img {
-  height: 200px;
-  border-radius: 50%;
-}
-
 .Character-Card {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
-.Character-card--wrapper {
+.Character-card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  border: 1px solid aquamarine;
+  border: 1px solid white;
   padding: 1rem;
   border-radius: 15px;
-  text-align: center;
   background-color: #ffffff1b;
+  max-width: 300px;
+}
+
+.Character-card__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.Character-card__pageFlip {
+  display: flex;
+  flex-direction: column;
 }
 
 .Character-Card__image {
@@ -84,6 +90,9 @@
 .Footer {
   border-top: 1px solid white;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .CharacterList__wrapper {
@@ -97,4 +106,10 @@
 .CharacterList__wrapper a {
   text-decoration: none;
   color: white;
+}
+
+.CharacterList__pageChange {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 export default function CharactersList() {
   const [characters, setCharacters] = useState([]);
   const [pageCount, setPageCount] = useState(1);
+  const [nameFilter, setNameFilter] = useState([]);
+  const [statusFilter, setStatusFilter] = useState([]);
 
   useEffect(() => {
     console.log(pageCount);
@@ -16,11 +18,23 @@ export default function CharactersList() {
   }, [pageCount]);
 
   function renderCharacters() {
-    return characters.map((character) => {
+    const filterByStatus = characters.filter((character) => {
+      if (statusFilter === "Alive") {
+        return character.status === "Alive";
+      } else if (statusFilter === "Dead") {
+        return character.status === "Dead";
+      } else if (statusFilter === "Unknown") {
+        return character.status === "unknown";
+      } else {
+        return character;
+      }
+    });
+
+    return filterByStatus.map((character) => {
       const id = character.id;
 
       return (
-        <section key={id} className="Character-card--wrapper">
+        <section key={id} className="Character-card">
           <Link to={`/character/${id}`}>
             <p>{character.name}</p>
           </Link>
@@ -40,8 +54,8 @@ export default function CharactersList() {
     if (currentPage === 34) {
       setPageCount(34);
     } else {
+      setPageCount(currentPage + 1);
     }
-    setPageCount(currentPage + 1);
   }
 
   function handleClickBack() {
@@ -54,15 +68,42 @@ export default function CharactersList() {
     }
   }
 
+  function handleOnChange(event) {
+    const inputName = event.target.value;
+    setNameFilter(inputName);
+  }
+
+  function handleOnChangeStatus(event) {
+    const inputStatus = event.target.value;
+    setStatusFilter(inputStatus);
+  }
+
   return (
     <>
       <div>
-        <button onClick={handleClickBack}>Previous</button>
-        <button onClick={handleClickNext}>Next</button>
+        <input
+          type="text"
+          id="nameInput"
+          name="nameInput"
+          placeholder="Type in a character's name"
+          onChange={handleOnChange}
+        />
+        <select name="status" id="status" onChange={handleOnChangeStatus}>
+          <option value="">Status</option>
+          <option value="Dead">Dead</option>
+          <option value="Alive">Alive</option>
+          <option value="Unknown">Unknown</option>
+        </select>
+      </div>
+      <div className="CharacterList__pageChange">
+        <p onClick={handleClickBack}>⬅️</p>
+        <p>Page {pageCount} of 34 </p>
+        <p onClick={handleClickNext}>➡️</p>
       </div>
       <div className="CharacterList__wrapper">{renderCharacters()}</div>
-      <div>
+      <div className="CharacterList__pageChange">
         <p onClick={handleClickBack}>⬅️</p>
+        <p>Page {pageCount} of 34 </p>
         <p onClick={handleClickNext}>➡️</p>
       </div>
     </>
